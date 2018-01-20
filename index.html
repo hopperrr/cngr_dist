@@ -5,14 +5,15 @@
     <meta charset="utf-8" />
     <link 
         rel="stylesheet" 
-        href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css"
+        href="./css/leaflet.css"
     />
 </head>
 <body>
     <div id="map" style="width: 600px; height: 400px"></div>
 
     <script
-        src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js">
+        src="./javascript/leaflet.js">
+        src="./javascript/leaflet.ajax.min.js">
     </script>
 
     <script>
@@ -24,6 +25,8 @@
             attribution: '&copy; ' + mapLink + ' Contributors',
             maxZoom: 18,
             }).addTo(map);
+        var geojsonLayer = new L.GeoJSON.AJAX("congress.geojson");       
+        geojsonLayer.addTo(map);
     </script>
 </body>
 </html>
