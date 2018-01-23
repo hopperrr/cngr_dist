@@ -26,6 +26,12 @@
             }).addTo(map);
         var geojsonLayer = new L.GeoJSON.AJAX("congress.geojson");       
         geojsonLayer.addTo(map);
+        var layerGroup = L.geojsonLayer(data, {
+            onEachFeature: function (feature, layer) {
+            layer.bindPopup('<h1>'+feature.properties.name+'</h1><p>name: '+feature.properties.name+'</p>');
+                }
+            }).addTo(map);
+    
     </script>
 </body>
 </html>
