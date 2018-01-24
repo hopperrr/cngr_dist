@@ -28,6 +28,7 @@
             maxZoom: 18,
             }).addTo(map);
         var geojsonLayer = new L.GeoJSON.AJAX("congress.geojson");       
+        geojsonLayer.setStyle({fillColor: '#0000FF'});
         geojsonLayer.addTo(map);
 
     </script>
