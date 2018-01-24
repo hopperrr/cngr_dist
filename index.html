@@ -14,14 +14,8 @@
     <script
         src="./javascript/leaflet.js">
     </script>
-<script src="./javascript/leaflet.ajax.min.js"></script>
     <script>
-    var myStyle = {
-        "color": "#ff7800",
-        "weight": 5,
-        "opacity": 0.65
-    };
-        var map = L.map('map').setView([33.6595, -117.9988], 10);
+        var map = L.map('map').setView([-117.99, 33.6595], 10);
         mapLink = 
             '<a href="http://openstreetmap.org">OpenStreetMap</a>';
         L.tileLayer(
@@ -29,8 +23,8 @@
             attribution: '&copy; ' + mapLink + ' Contributors',
             maxZoom: 18,
             }).addTo(map);
-        var geojsonLayer = new L.GeoJSON.AJAX("congress.geojson"), style: myStyle;       
-        geojsonLayer.addTo(map);    
+        var geojsonLayer = new L.GeoJSON.AJAX("congress.geojson");       
+        geojsonLayer.addTo(map);
     </script>
 </body>
 </html>
