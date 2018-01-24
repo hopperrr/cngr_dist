@@ -28,9 +28,12 @@
             maxZoom: 18,
             }).addTo(map);
         var geojsonLayer = new L.GeoJSON.AJAX("congress.geojson");       
-        geojsonLayer.setStyle({fillColor: '#0000FF'});
         geojsonLayer.addTo(map);
-
+geojsonLayer.eachLayer(function (layer) {  
+  if(layer.feature.properties.party == 'Democratic') {    
+    layer.setStyle({fillColor :'blue'}) 
+  }
+});
     </script>
 </body>
 </html>
